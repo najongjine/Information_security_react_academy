@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
+
   const [lottoNumbers, setLottoNumbers] = useState<number[]>([]);
-  // 최소값(min)과 최대값(max) 사이의 랜덤 정수 만들기
+
+  // 랜덤 정수 하나 만들기
   function getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+  //number 로 이루어진 list 섞기
   function shuffleNumList(numbers: number[], shuffleRepeats: number) {
     for (let a = 0; a < shuffleRepeats; a++) {
       for (let i = numbers.length - 1; i > 0; i--) {
@@ -16,6 +19,7 @@ const Home: React.FC = () => {
     }
     return numbers
   }
+  // 로또번호 만들기
   const generateLottoNumbers = () => {
     let numbers: number[] = [];
     for (let i = 1; i <= 45; i++) {
