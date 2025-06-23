@@ -5,7 +5,7 @@ const Home: React.FC = () => {
 
   const [lottoNumbers, setLottoNumbers] = useState<number[]>([]);
 
-  // 랜덤 정수 하나 만들기
+  // 랜덤 정수 하나 만들기.
   function getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
